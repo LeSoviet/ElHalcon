@@ -4,9 +4,12 @@ import { useState } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
+import { LanguageToggle } from "@/components/language-toggle"
+import { useI18n } from "@/components/providers/locale-provider"
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const t = useI18n()
 
   return (
     <header className="w-full bg-white border-b sticky top-0 z-50 shadow-sm">
@@ -21,17 +24,18 @@ export default function Header() {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
             <Link href="/experience" className="text-gray-700 hover:text-primary transition-colors font-medium">
-              Experience
+              {t.common.nav.experience}
             </Link>
             <Link href="/quote" className="text-gray-700 hover:text-primary transition-colors font-medium">
-              Get a Quote
+              {t.common.nav.quote}
             </Link>
           </nav>
 
-          {/* Login Button */}
-          <div className="hidden md:block">
+          {/* Actions */}
+          <div className="hidden md:flex items-center gap-2">
+            <LanguageToggle />
             <Button asChild>
-              <Link href="/login">Login</Link>
+              <Link href="/login">{t.common.nav.login}</Link>
             </Button>
           </div>
 
@@ -56,18 +60,21 @@ export default function Header() {
                 className="block py-2 text-gray-700 hover:text-primary transition-colors font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Experience
+                {t.common.nav.experience}
               </Link>
               <Link
                 href="/quote"
                 className="block py-2 text-gray-700 hover:text-primary transition-colors font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Get a Quote
+                {t.common.nav.quote}
               </Link>
-              <Button className="w-full mt-2" asChild onClick={() => setIsMenuOpen(false)}>
-                <Link href="/login">Login</Link>
-              </Button>
+              <div className="flex items-center gap-2 mt-2">
+                <LanguageToggle />
+                <Button className="flex-1" asChild onClick={() => setIsMenuOpen(false)}>
+                  <Link href="/login">{t.common.nav.login}</Link>
+                </Button>
+              </div>
             </nav>
           </div>
         </div>

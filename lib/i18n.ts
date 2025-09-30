@@ -706,3 +706,167 @@ export const translations: Record<Locale, Translation> = {
             "Reconstrucción completa de carrocería tras daño estructural. Reemplazamos paneles traseros, fabricamos piso a medida y replicamos el Candy Apple Red original con protección cerámica. Entrega en 6 semanas con documentación para aseguradora y cliente.",
           metrics: [
             { value: "120h", label: "Horas de oficio" },
+            { value: "8", label: "Especialistas involucrados" },
+            { value: "0", label: "Visitas de retorno" },
+          ],
+          stories: [
+            {
+              title: "Caso de seguro: granizo",
+              detail: "Reperfilado de paneles y pintura en múltiples etapas en una SUV 2021. Coordinación de auto de reemplazo incluida.",
+              result: "Terminado en 4 días",
+            },
+            {
+              title: "Preservación clásica",
+              detail: "Tratamiento anticorrosivo preventivo y detallado interior de un Mercedes-Benz 1955.",
+              result: "Contrato anual de mantenimiento",
+            },
+          ],
+        },
+      },
+      customerExperience: {
+        badge: "Testimonios",
+        title: "Historias reales, resultados comprobados",
+        description:
+          "Cada reparación incluye seguimiento, reportes fotográficos y comunicación transparente con el cliente. Descubre más en nuestra nueva página dedicada a la experiencia completa en el taller.",
+        highlights: [
+          {
+            value: "< 24h",
+            label: "Tiempo de respuesta promedio",
+            detail: "Presupuestos con fotos y plan de Trabajo.",
+          },
+          {
+            value: "78%",
+            label: "Clientes recurrentes",
+            detail: "Conductores que vuelven para mantenimiento y referidos.",
+          },
+          {
+            value: "12",
+            label: "Aseguradoras aliadas",
+            detail: "Coordinamos papeleo e inspecciones por ti.",
+          },
+        ],
+        cta: "Ver experiencia completa",
+      },
+      visit: {
+        badge: "Visítanos",
+        title: "Horarios y turnos",
+        description:
+          "Coordinamos turnos para reparaciones complejas y entregas express para trabajos rápidos. Escríbenos antes de tu visita para reservar cabina o box según tu necesidad.",
+        weekday: {
+          title: "Lunes a viernes",
+          morningLabel: "Mañana",
+          morningHours: "8:00 - 13:00",
+          afternoonLabel: "Tarde",
+          afternoonHours: "15:00 - 18:00",
+          note: "Cerramos de 13:00 a 15:00 para almuerzo y curado.",
+        },
+        weekend: {
+          title: "Fines de semana",
+          description: "Cerrado. Atendemos emergencias por correo coordinado.",
+        },
+        contactBox: {
+          title: "¿Necesitas coordinar una visita?",
+          descriptionPrefix: "Envíanos fotos y descripción a",
+          email: "hola@elhalcon.com.ar",
+          descriptionMiddle: "o comunícate al",
+          phone: "+54 11 5555-1234",
+          descriptionSuffix: "Confirmamos tu turno en menos de un día hábil.",
+          addressLabel: "Dirección",
+          address: "Av. San Martín 4567, CABA",
+          parkingNote: "Entre calles La Pampa y Grecia. Estacionamiento propio.",
+          servicesLabel: "Servicios en sitio",
+          servicesDescription: "Cabinas presurizadas, laboratorio de color y sala de entrega protegida.",
+          cta: "Planificar visita",
+        },
+      },
+      cta: {
+        title: "¿Listo para restaurar tu vehículo?",
+        description:
+          "Solicita un presupuesto sin cargo y descubre por qué somos el taller de confianza de miles de clientes.",
+        button: "Obtener presupuesto",
+      },
+    },
+    experience: {
+      hero: {
+        badge: "Experiencia EH",
+        title: "Así cuidamos tu vehículo de principio a fin",
+        description:
+          "Transparencia, planificación y oficio. Conoce cómo gestionamos cada proyecto, los puntos de control que seguimos y los servicios disponibles para que tu auto vuelva a la calle con garantías reales.",
+        primaryCta: "Solicitar presupuesto",
+        secondaryCta: "Planificar visita",
+      },
+      process: {
+        title: "Nuestro proceso certificado",
+        description:
+          "Diseñado para reducir tiempos muertos, darle trazabilidad al Trabajo y mantener la comunicación abierta en cada etapa.",
+        steps: [
+          {
+            title: "Diagnóstico de llegada",
+            description:
+              "Revisamos estructura, pintura y mecánica auxiliar. Documentamos avances con tu compañía de seguros si aplica.",
+          },
+          {
+            title: "Plan de Trabajo",
+            description:
+              "Preparamos cronograma con fases de desarme, reparación y terminación. Compartimos presupuesto detallado y tiempos.",
+          },
+          {
+            title: "Ejecución y controles",
+            description:
+              "Nuestros especialistas trabajan por células: estructura, pintura y detalle. Cada etapa recibe control de calidad.",
+          },
+          {
+            title: "Entrega y seguimiento",
+            description:
+              "Presentamos informe final, checklist y recomendaciones de Cuidado. Hacemos seguimiento 7 días después de la entrega.",
+          },
+        ],
+      },
+      visit: {
+        title: "Qué esperar el día de la visita",
+        description:
+          "Te recibimos con una.methodología clara para que no pierdas tiempo y sepas exactamente qué ocurre con tu vehículo en el taller.",
+        checklistTitle: "Checklist de recepción",
+        checklistItems: [
+          "Turno confirmado con día y hora",
+          "Espacio de guardado asegurado bajo techo",
+          "Reporte fotográfico inicial con estado del vehículo",
+          "Listado de piezas nuevas o restauradas",
+          "Entrega limpia y protegida, lista para rodar",
+        ],
+        supportTitle: "Canales de acompañamiento",
+        supportDescription:
+          "Estamos disponibles durante todo el proceso. Elige tu canal preferido y recibe respuestas reales, sin scripts.",
+        channels: [
+          {
+            title: "Agenda flexible",
+            description:
+              "Reservamos cabina o box según la complejidad y ajustamos horarios si vienes desde el interior.",
+          },
+          {
+            title: "Equipo asignado",
+            description:
+              "Siempre contarás con un referente técnico y otro administrativo para cualquier consulta.",
+          },
+          {
+            title: "Actualizaciones semanales",
+            description:
+              "Enviamos resúmenes de avances, piezas recibidas y próximos hitos por WhatsApp o correo.",
+          },
+        ],
+      },
+      testimonials: {
+        title: "Voces de nuestros clientes",
+        description:
+          "Experiencias seleccionadas que muestran cómo acompañamos desde el primer contacto hasta la entrega, y qué destacan quienes confían en nosotros año tras año.",
+      },
+      visitCta: {
+        title: "Agenda tu visita guiada",
+        description:
+          "Coordinamos un recorrido por el taller, te mostramos los espacios de Trabajo y planificamos el servicio que necesitas. Recibirás un correo con horarios disponibles y documentación a preparar.",
+        primaryCta: "Reservar turno",
+        secondaryCta: "Escribirnos",
+      },
+    },
+  },
+}
