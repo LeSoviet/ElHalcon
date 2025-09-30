@@ -20,6 +20,9 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
+            <Link href="/experience" className="text-gray-700 hover:text-primary transition-colors font-medium">
+              Experience
+            </Link>
             <Link href="/quote" className="text-gray-700 hover:text-primary transition-colors font-medium">
               Get a Quote
             </Link>
@@ -48,6 +51,13 @@ export default function Header() {
         <div className="md:hidden bg-white border-t">
           <div className="container mx-auto px-4 py-4">
             <nav className="flex flex-col gap-4">
+              <Link
+                href="/experience"
+                className="block py-2 text-gray-700 hover:text-primary transition-colors font-medium"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Experience
+              </Link>
               <Link
                 href="/quote"
                 className="block py-2 text-gray-700 hover:text-primary transition-colors font-medium"

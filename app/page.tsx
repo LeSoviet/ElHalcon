@@ -47,6 +47,24 @@ export default function Home() {
     }
   ]
 
+  const customerHighlights = [
+    {
+      label: "Average response time",
+      value: "< 24h",
+      detail: "Quotes delivered with photos and job plan."
+    },
+    {
+      label: "Repeat customers",
+      value: "78%",
+      detail: "Drivers who come back for maintenance and referrals."
+    },
+    {
+      label: "Insurance partners",
+      value: "12",
+      detail: "We coordinate paperwork and inspections for you."
+    }
+  ]
+
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
@@ -353,79 +371,149 @@ export default function Home() {
               </div>
             </FadeIn>
             <FadeIn direction="right" delay={0.2}>
-              <div className="grid gap-4 sm:grid-cols-2">
-                {["https://images.unsplash.com/photo-1521721134996-5264d20318d9?auto=format&fit=crop&w=800&q=80",
-                  "https://images.unsplash.com/photo-1659540913679-0f1f75ad707b?auto=format&fit=crop&w=800&q=80",
-                  "https://images.unsplash.com/photo-1597006586321-09b0a723b861?auto=format&fit=crop&w=800&q=80",
-                  "https://images.unsplash.com/photo-1521721134996-5264d20318d9?auto=format&fit=crop&w=800&q=60"].map((src, index) => (
-                  <div
-                    key={`${src}-${index}`}
-                    className={`relative aspect-[4/3] overflow-hidden rounded-2xl shadow-lg ${
-                      index % 2 === 0 ? "sm:translate-y-6" : ""
-                    }`}
-                  >
-                    <Image
-                      src={src}
-                      alt="Restoration collage photograph"
-                      fill
-                      sizes="(min-width: 1024px) 30vw, 80vw"
-                      className="object-cover transition-transform duration-700 ease-out hover:scale-105"
-                    />
+              <div className="grid gap-6">
+                <div className="rounded-3xl border border-primary/10 bg-white p-8 shadow-sm">
+                  <p className="text-sm font-semibold uppercase tracking-wide text-primary">Most recent project</p>
+                  <h3 className="mt-3 text-2xl font-bold text-gray-900">1967 Ford Mustang Fastback</h3>
+                  <p className="mt-4 text-sm leading-6 text-gray-600">
+                    Complete body rebuild after structural damage. We replaced quarter panels, fabricated a custom floor
+                    pan, and replicated the original Candy Apple Red finish with ceramic protection. Delivery in 6 weeks
+                    with before/after documentation for the insurer and owner.
+                  </p>
+                  <div className="mt-6 grid gap-3 sm:grid-cols-3">
+                    <div className="rounded-2xl bg-primary/5 p-4 text-primary">
+                      <p className="text-3xl font-bold">120h</p>
+                      <p className="text-xs uppercase tracking-wide">Craft hours</p>
+                    </div>
+                    <div className="rounded-2xl bg-primary/5 p-4 text-primary">
+                      <p className="text-3xl font-bold">8</p>
+                      <p className="text-xs uppercase tracking-wide">Specialists involved</p>
+                    </div>
+                    <div className="rounded-2xl bg-primary/5 p-4 text-primary">
+                      <p className="text-3xl font-bold">0</p>
+                      <p className="text-xs uppercase tracking-wide">Return visits</p>
+                    </div>
                   </div>
-                ))}
+                </div>
+                <div className="grid gap-4 sm:grid-cols-2">
+                  {[{
+                    title: "Insurance case: hail storm",
+                    detail: "Panel reshaping and multi-stage paint on a 2021 SUV. Rental vehicle coordination included.",
+                    result: "Completed in 4 days"
+                  }, {
+                    title: "Classic preservation",
+                    detail: "Preventive anti-corrosive treatment and interior detailing for a 1955 Mercedes-Benz.",
+                    result: "Annual maintenance contract"
+                  }].map((story) => (
+                    <div key={story.title} className="rounded-2xl bg-white p-6 shadow-sm border border-gray-100">
+                      <h4 className="text-lg font-semibold text-gray-900">{story.title}</h4>
+                      <p className="mt-3 text-sm text-gray-600">{story.detail}</p>
+                      <p className="mt-4 text-sm font-semibold text-primary">{story.result}</p>
+                    </div>
+                  ))}
+                </div>
               </div>
             </FadeIn>
           </div>
         </div>
       </section>
 
-      {/* Testimonials Section */}
+      {/* Customer Experience */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
-          <FadeIn>
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">What Our Customers Say</h2>
-            <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-              Our customers' satisfaction is our best calling card
-            </p>
-          </FadeIn>
-          <FadeIn direction="up" delay={0.2}>
-            <Testimonials />
-          </FadeIn>
+          <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr),minmax(0,1fr)] items-start">
+            <FadeIn direction="left">
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">Testimonios</p>
+                <h2 className="mt-3 text-3xl md:text-4xl font-bold">Historias reales, resultados verificables</h2>
+                <p className="mt-4 text-gray-600 text-lg">
+                  Cada reparación incluye seguimiento, reporte fotográfico y comunicación transparente con el cliente. 
+                  Conoce más en nuestra nueva página dedicada a la experiencia completa en taller.
+                </p>
+                <div className="mt-8 grid gap-4 sm:grid-cols-3">
+                  {customerHighlights.map((highlight) => (
+                    <div key={highlight.label} className="rounded-2xl border border-gray-100 bg-gray-50 p-4">
+                      <p className="text-sm font-semibold text-primary">{highlight.label}</p>
+                      <p className="mt-2 text-2xl font-bold text-gray-900">{highlight.value}</p>
+                      <p className="mt-2 text-xs text-gray-600">{highlight.detail}</p>
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-10">
+                  <Button asChild size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/5">
+                    <Link href="/experience">Ver experiencia completa</Link>
+                  </Button>
+                </div>
+              </div>
+            </FadeIn>
+            <FadeIn direction="right" delay={0.2}>
+              <div className="rounded-3xl border border-primary/10 bg-white p-6 shadow-lg">
+                <Testimonials />
+              </div>
+            </FadeIn>
+          </div>
         </div>
       </section>
 
-      {/* Business Hours */}
-      <section className="py-16 bg-gray-50">
+      {/* Visit & Schedule */}
+      <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
-          <FadeIn>
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">Business Hours</h2>
-          </FadeIn>
-          <FadeIn direction="up" delay={0.2}>
-            <div className="max-w-lg mx-auto bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-              <div className="space-y-4">
-                <div className="border-b pb-4">
-                  <h3 className="text-lg font-bold mb-2">Monday to Friday</h3>
-                  <div className="flex flex-col sm:flex-row sm:justify-between items-center gap-2">
-                    <div className="flex gap-2 items-center">
-                      <span className="font-medium">Morning:</span>
-                      <span>8:00 AM - 1:00 PM</span>
-                    </div>
-                    <div className="flex gap-2 items-center">
-                      <span className="font-medium">Afternoon:</span>
-                      <span>3:00 PM - 6:00 PM</span>
-                    </div>
+          <div className="grid gap-10 lg:grid-cols-[minmax(0,0.9fr),minmax(0,1.1fr)] items-start">
+            <FadeIn direction="left">
+              <div className="rounded-3xl bg-white p-8 shadow-sm border border-gray-100">
+                <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">Visítanos</p>
+                <h2 className="mt-3 text-3xl font-bold text-gray-900">Horarios y turnos</h2>
+                <p className="mt-4 text-gray-600 text-sm">
+                  Coordinamos turnos para reparaciones complejas y entregas express para toques rápidos. Escríbenos antes
+                  de tu visita para reservar cabina o box según tu necesidad.
+                </p>
+                <div className="mt-6 space-y-6">
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-900">Lunes a Viernes</h3>
+                    <ul className="mt-3 space-y-2 text-sm text-gray-600">
+                      <li className="flex items-center justify-between">
+                        <span>Mañana</span>
+                        <span>8:00 - 13:00</span>
+                      </li>
+                      <li className="flex items-center justify-between">
+                        <span>Tarde</span>
+                        <span>15:00 - 18:00</span>
+                      </li>
+                    </ul>
+                    <p className="mt-3 text-xs text-gray-500 italic">Cerramos de 13:00 a 15:00 para almuerzo y curado.</p>
                   </div>
-                  <p className="text-sm text-gray-500 mt-2 italic">Closed for lunch from 1:00 PM to 3:00 PM</p>
-                </div>
-                <div>
-                  <h3 className="text-lg font-bold mb-2">Weekends</h3>
-                  <p>
-                    Saturday and Sunday: <span className="font-medium">Closed</span>
-                  </p>
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-900">Sábados y Domingos</h3>
+                    <p className="mt-2 text-sm text-gray-600">Cerrado. Atendemos emergencias por correo coordinado.</p>
+                  </div>
                 </div>
               </div>
-            </div>
-          </FadeIn>
+            </FadeIn>
+            <FadeIn direction="right" delay={0.2}>
+              <div className="rounded-3xl bg-primary text-white p-8 shadow-lg">
+                <h3 className="text-2xl font-bold">¿Necesitas coordinar una visita?</h3>
+                <p className="mt-4 text-sm text-white/80">
+                  Envíanos fotos y descripción a <span className="font-semibold">hola@elhalcon.com.ar</span> o
+                  comunícate al <span className="font-semibold">+54 11 5555-1234</span>. Te confirmamos turno en menos
+                  de un día hábil.
+                </p>
+                <div className="mt-6 grid gap-4">
+                  <div className="rounded-2xl bg-white/10 p-4">
+                    <p className="text-xs uppercase tracking-wide text-white/60">Dirección</p>
+                    <p className="mt-2 text-lg font-semibold">Av. San Martín 4567, CABA</p>
+                    <p className="text-sm text-white/75">Entre calles La Pampa y Grecia. Estacionamiento propio.</p>
+                  </div>
+                  <div className="rounded-2xl bg-white/10 p-4">
+                    <p className="text-xs uppercase tracking-wide text-white/60">Servicios en sitio</p>
+                    <p className="mt-2 text-sm text-white/80">Cabinas presurizadas, laboratorio de color y sala de entrega protegida.</p>
+                  </div>
+                  <Button asChild size="lg" className="mt-2 bg-white text-primary hover:bg-gray-100">
+                    <Link href="/experience#visita">Planificar visita</Link>
+                  </Button>
+                </div>
+              </div>
+            </FadeIn>
+          </div>
         </div>
       </section>
 

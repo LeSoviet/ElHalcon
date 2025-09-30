@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
+import { LocaleProvider } from "@/components/providers/locale-provider"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 
@@ -23,11 +24,13 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
-          <Header />
-          <main>{children}</main>
-          <Footer />
-        </ThemeProvider>
+        <LocaleProvider>
+          <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
+            <Header />
+            <main>{children}</main>
+            <Footer />
+          </ThemeProvider>
+        </LocaleProvider>
       </body>
     </html>
   )
